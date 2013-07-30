@@ -24,7 +24,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Views
-#gem 'haml'
 gem 'haml-rails'
 gem 'markdown-rails'
 
@@ -48,35 +47,33 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-group :development, :test do
-  # Use debugger
-  gem 'debugger', group: [:development, :test]
-
-  gem 'simplecov', :require => false
-
-  #gem 'faker'
-  #gem 'fabrication', '0.9.5'
-  #gem 'rspec-rails'
-  #gem 'capybara'
-  #gem 'annotate'
-  #gem 'database_cleaner'
-
-  # HUGE Time Saver: preload the rails env
-  gem 'rrails'
-end
-
 # Debug
 gem 'pry'
 gem 'pry-rails'
 
 # Essentials
 gem 'decent_exposure'
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+#################
+## DEVELOPMENT ##
+#################
+
+gem 'debugger', group: [:development, :test]
+gem 'simplecov', group: :development, require: false
+gem 'html2haml', group: :development
+#gem 'faker'
+#gem 'fabrication', '0.9.5'
+#gem 'rspec-rails'
+#gem 'capybara'
+#gem 'annotate'
+#gem 'database_cleaner'
+
+# HUGE Time Saver: preload the rails env
+gem 'rrails', group: [:development, :test]
+
+##################
+## /DEVELOPMENT ##
+##################
