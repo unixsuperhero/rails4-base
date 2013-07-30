@@ -25,7 +25,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Views
 #gem 'haml'
-#gem 'haml-rails'
+gem 'haml-rails'
 gem 'markdown-rails'
 
 # Use jquery as the JavaScript library
