@@ -19,5 +19,14 @@ module Rails4Base
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.before_initialize do
+      %w(development).each do |e|
+        custom_configure = File.join(Rails.root, 'config', "#{e}.yml")
+        YAML.load(File.open(custom_configure)).each do |key, value|
+          ENV[key.to_s] = value
+        end if File.exists?(custom_configure)
+      end
+    end
   end
 end
