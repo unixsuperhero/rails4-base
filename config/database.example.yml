@@ -1,0 +1,14 @@
+global: &global
+  adapter: postgresql
+  username: dev
+  min_messages: warning
+
+development:
+  database: changeme_development
+  <<: *global
+
+test: &test
+  database: changeme_test_<%= ENV['TEST_ENV_NUMBER'].presence || '1' %>
+  <<: *global
+
+
