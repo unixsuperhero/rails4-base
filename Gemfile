@@ -30,7 +30,7 @@ gem 'markdown-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'twitter-bootstrap-rails'
+# gem 'twitter-bootstrap-rails'
 # rails g bootstrap:install static
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
