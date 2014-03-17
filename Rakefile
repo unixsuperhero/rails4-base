@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Rails4Base::Application.load_tasks
+CareCloud::Application.load_tasks
