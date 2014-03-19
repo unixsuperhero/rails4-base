@@ -1,0 +1,72 @@
+<h1>Joshua Toyota's Care Cloud Assignment</h1>
+
+<h2>Responses</h2>
+
+<p>With the exception of the List action, the API response with JSON in the following format:</p>
+
+<pre><code>{
+  "status": "(success|error)",
+  "message": "&lt;success_message|error_messages&gt;"
+}
+</code></pre>
+
+<p>Successful messages have a Response Code of 200.</p>
+
+<p>Error messages have a response code of 400 (Bad Request).</p>
+
+<h2>API Endpoints</h2>
+
+<ul>
+<li><p><strong>OPERATION</strong>: Show/List <br />
+<strong>METHOD</strong>: GET <br />
+<strong>ENDPOINT</strong>: /appointments <br />
+<strong>ENDPOINT</strong>: /appointments/list <br />
+<strong>PARAMS</strong>: <br />
+(<em>optional</em>) start_time (format: YYYY-mm-dd HH:MM[:SS]) <br />
+(<em>optional</em>) end_time (format: YYYY-mm-dd HH:MM[:SS])  </p></li>
+<li><p><strong>OPERATION</strong>: Create <br />
+<strong>METHOD</strong>: POST <br />
+<strong>ENDPOINT</strong>: /appointments <br />
+<strong>PARAMS</strong>: <br />
+start_time <strong>datetime</strong> (format: YYYY-mm-dd HH:MM[:SS]) <br />
+end_time <strong>datetime</strong> (format: YYYY-mm-dd HH:MM[:SS]) <br />
+first_name <strong>string</strong> <br />
+last_name <strong>string</strong>  </p></li>
+<li><p><strong>OPERATION</strong>: Update <br />
+<strong>METHOD</strong>: PUT <br />
+<strong>ENDPOINT</strong>: /appointments/:id <br />
+<strong>PARAMS</strong>: <br />
+start_time <strong>datetime</strong> (format: YYYY-mm-dd HH:MM[:SS]) <br />
+end_time <strong>datetime</strong> (format: YYYY-mm-dd HH:MM[:SS]) <br />
+first_name <strong>string</strong> <br />
+last_name <strong>string</strong>  </p></li>
+<li><p><strong>OPERATION</strong>: Destroy/Delete <br />
+<strong>METHOD</strong>: DELETE <br />
+<strong>ENDPOINT</strong>: /appointments/:id  </p></li>
+</ul>
+
+<h2>Worth Mentioning</h2>
+
+<p>In the sample dataset, some of the start and end times overlap.  As a result,
+when loading the seed data incrementally, any subsequent appointments with
+overlapping times were not created as per the conditions.</p>
+
+<h2>Web Framework: Rails</h2>
+
+<p>I chose Rails for this assignment only because of time constraints.  Under
+normal circumstances, I would have chosen Sinatra for implementing a (JSON)
+REST API.  For such a small project, the robustness of Rails isn't necessary.
+Due to the robustness, Rails also adds unnecessary overhead increasing
+loadtimes.</p>
+
+<h2>Testing Framework: Minitest</h2>
+
+<p>I have used RSpec for many years now.  However, because Minitest is the new
+standard for Rails 4 and the DSL is almost identical to RSpec's, it wasn't a
+problem making the transition.</p>
+
+<p>Also, the test written were integration/functional tests.  Because the
+underlying business logic was sparce and implementing the rules were best done
+by utilizing Rails' features, I avoided extracting the rules into separate libs
+and concerns.  For a larger app, I generally follow an 80/20 unit/integration
+test percentage.</p>
