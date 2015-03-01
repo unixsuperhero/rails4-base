@@ -26,3 +26,12 @@ rails g devise User
 
 rake db:migrate
 
+function sleep_then_load_page() {
+  sleep 5
+  open http://localhost:9999
+}
+
+sleep_then_load_page &
+
+rails server -p 9999
+
