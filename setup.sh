@@ -26,6 +26,8 @@ rails g devise User
 
 rake db:migrate
 
+git add --all; git commit -m 'setup new rails application, testing the configuration now...'
+
 function sleep_then_load_page() {
   sleep 5
   open http://localhost:9999
