@@ -4,11 +4,11 @@ global: &global
   min_messages: warning
 
 development:
-  database: changeme_development
+  database: generic_application_development
   <<: *global
 
 test: &test
-  database: changeme_test_<%= ENV['TEST_ENV_NUMBER'].presence || '1' %>
+  database: generic_application_test_<%= ENV['TEST_ENV_NUMBER'].presence || '1' %>
   <<: *global
 
 
