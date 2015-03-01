@@ -40,7 +40,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Optional
-gem 'devise', :github => 'plataformatec/devise', :branch => 'rails4'
+gem 'devise'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
