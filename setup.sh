@@ -16,3 +16,13 @@ sed "s/GenericApplication/$classname/g;s/generic_application/$db_name/g" config/
 
 sed "s/GenericApplication/$classname/g;s/generic_application/$db_name/g" config/database.example.yml > tmpfile; mv -v tmpfile config/database.example.yml
 cp -v config/database{.example,}.yml
+
+bundle install
+
+rake db:create:all
+
+rails g devise:install
+rails g devise User
+
+rake db:migrate
+
