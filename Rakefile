@@ -3,5 +3,5 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-GenericApplication::Application.load_tasks
+BalanceViewer::Application.load_tasks
 
